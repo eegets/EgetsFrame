@@ -15,21 +15,15 @@ fun isDebugMode(): Boolean {
 }
 
 fun logger(vararg message: Any?) {
-    if (isDebugMode()) {
-        Log.d(generateLog(), composeMessage(*message))
-    }
+    Log.d(generateLog(), composeMessage(*message))
 }
 
 inline fun logger(message: (() -> Any?)) {
-    if (isDebugMode()) {
-        Log.d(generateLog(), composeMessage(message()))
-    }
+    Log.d(generateLog(), composeMessage(message()))
 }
 
 inline fun Any.logger(any: Any, message: (() -> Any?)) {
-    if (isDebugMode()) {
-        Log.d(generateLog(), composeMessage(any.javaClass.simpleName, message()))
-    }
+    Log.d(generateLog(), composeMessage(any.javaClass.simpleName, message()))
 }
 
 fun generateLog(): String {
