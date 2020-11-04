@@ -1,4 +1,4 @@
-package com.eegets.egetsframe
+package com.eegets.frame
 
 import org.junit.Test
 

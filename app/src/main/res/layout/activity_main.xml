@@ -5,14 +5,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
     <TextView
+        android:id="@+id/debounceClick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="去重点击"
+        />
 
+    <TextView
+        android:id="@+id/hilt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hilt测试"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/debounceClick" />
+
+    <TextView
+        android:id="@+id/hilt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hilt限定符测试例子"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hilt" />
 </androidx.constraintlayout.widget.ConstraintLayout>

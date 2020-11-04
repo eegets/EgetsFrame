@@ -1,0 +1,24 @@
+android {
+    // 移除lint检查的error，可以避免由于编译条件太过严格而编译不过的问题
+    lintOptions {
+        // InvalidPackage: Package not included in Android
+        disable 'InvalidPackage'
+        // Expected resource of type color [ResourceType] 资源类型错误
+        disable "ResourceType"
+        // 忽略因MissingTranslation导致Build Failed错误 "app_name" is not translated in "zh" (Chinese)
+        disable 'MissingTranslation'
+
+        lintConfig file("../secoo_lint.xml")
+
+        abortOnError false
+//        checkReleaseBuilds false
+        // 设置为 true，则当有错误时会显示文件的全路径或绝对路径 (默认情况下为true)
+        absolutePaths true
+    }
+
+}
+
+
+dependencies {
+    lintChecks project(":module-lint")
+}
