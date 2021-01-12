@@ -3,7 +3,7 @@ package com.eegets.frame.hilt.hilt1
 import javax.inject.Inject
 
 /**
- * @packageName: com.eegets.egetsframe.hilt
+ * @packageName: com.eegets.frame.hilt
  * @author: eegets
  * @date: 20-10-9 下午4:39
  * @description: TODO

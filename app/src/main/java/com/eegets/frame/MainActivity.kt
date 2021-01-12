@@ -1,16 +1,20 @@
 package com.eegets.frame
 
+import android.app.ActivityOptions
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import android.util.Pair
+import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import com.eegets.frame.activity.TranslateActivity
+import com.eegets.frame.animator.AnimActivity
 import com.eegets.frame.hilt.hilt1.TestHiltActivity
 import com.eegets.frame.hilt.hilt2.AnalyticsActivity
 import com.eegets.library.ext.logger
 import com.eegets.library.fastclick.setOnSafeClickListener
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
-import java.lang.StringBuilder
+
 
 @AndroidEntryPoint
 class  MainActivity : AppCompatActivity() {
@@ -20,9 +24,6 @@ class  MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         debounceClick.setOnSafeClickListener {
-//            println("AAAAAAAAAAAAAAAAAa")
-            System.out.println("AAAAAAAAAAAAAA")
-            Log.d("TAG", "AAAAAAAAAAAAAAAAAa")
         }
 
         hilt.setOnClickListener {
@@ -31,6 +32,15 @@ class  MainActivity : AppCompatActivity() {
 
         hilt2.setOnClickListener {
             startActivity(Intent(this, AnalyticsActivity::class.java))
+        }
+        scale.setOnClickListener {
+            startActivity(Intent(this, AnimActivity::class.java))
+        }
+        transitionImg.setOnClickListener {
+            val pair = Pair<View, String>(transitionImg, "transitionImg")
+            val pair2 = Pair<View, String>(transitionText, "transitionText")
+            val bundle: Bundle = ActivityOptions.makeSceneTransitionAnimation(this, pair, pair2).toBundle()
+            startActivity(Intent(this, TranslateActivity::class.java), bundle)
         }
 
 //        logger {

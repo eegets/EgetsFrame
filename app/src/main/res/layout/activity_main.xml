@@ -34,4 +34,36 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hilt" />
+    <TextView
+        android:id="@+id/scale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="缩小布局"
+        android:layout_marginTop="20dp"
+        android:transitionName="transitionText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hilt2" />
+    <TextView
+        android:id="@+id/transitionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="缩放Text"
+        android:textSize="28sp"
+        android:layout_marginTop="50dp"
+        android:transitionName="transitionText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scale" />
+
+    <ImageView
+        android:id="@+id/transitionImg"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="#ff0000"
+        android:transitionName="transitionImg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/transitionText"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
